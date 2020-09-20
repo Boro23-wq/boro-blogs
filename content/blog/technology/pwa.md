@@ -18,7 +18,7 @@ PWA's essentially combines the use of advanced and critical modern technologies,
 
 The underlying three major factors that PWA's persist, helps transform normal web applications into a native application like experience that are very capable, reliable and installable.
 
-### **_<u>Capablility</u>_**
+### <u>Capablility:</u>
 
 The features that was well stacked for native apps has now rightly been expanding to limits we have never imagined. New web API's are now written to control features that deals with file system access, media controls, app badging support.
 
@@ -26,7 +26,7 @@ The modern apps built in compliance to progressive enhancement principles provid
 
 Between modern APIs, Web Assembly, and new and upcoming APIs, web applications are more capable than ever, and those capabilities are only growing.
 
-### **_<u>Reliability</u>_**
+### <u>Reliability</u>
 
 A Progressive Web App is very reliable knowing it is fast and dependable regardless of the network connection one might be under.
 
@@ -36,7 +36,7 @@ Performance doesn't stop after the onload event. Users should never be allowed t
 
 And with this profound impacts users will surely reckon a PWA to be very reliable.
 
-### **_<u>Installability</u>_**
+### <u>Installability</u>
 
 Progressive Web Apps typically runs in a standalone window instead of a browser tab. They can be launched preety much from anywhere (home screen, docks, taskbar...).
 
@@ -94,6 +94,6 @@ Progressive Web Apps are constantly gaining traction. Various big tech to mid-si
 
 ## References
 
-⦾ [Web.Dev](https://web.dev/what-are-pwas/) </br>
-⦾ [Medium](https://medium.com/iquii/progressive-web-app-pwa-what-they-are-pros-and-cons-and-the-main-examples-on-the-market-318f4538c670) </br>
-⦾ [Altexsoft](https://www.altexsoft.com/blog/engineering/progressive-web-apps/)
+⦾ [Web.Dev - What are progressive web apps?](https://web.dev/what-are-pwas/) </br>
+⦾ [Medium - Progressive Web App (PWA): what they are, pros and cons.](https://medium.com/iquii/progressive-web-app-pwa-what-they-are-pros-and-cons-and-the-main-examples-on-the-market-318f4538c670) </br>
+⦾ [Altexsoft - Progressive Web Apps: Core Features, Architecture, Pros and Cons.](https://www.altexsoft.com/blog/engineering/progressive-web-apps/)
