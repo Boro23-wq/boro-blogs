@@ -1,0 +1,143 @@
+@import '../styles/variables.scss';
+@import '../styles/light-theme.scss';
+@import '../styles/dark-theme.scss';
+
+@font-face {
+  font-family: ECircularLight;
+  src: url(./font/EuclidCircularA-Light.woff);
+}
+
+@font-face {
+  font-family: ECircularSemiBold;
+  src: url(./font/EuclidCircularA-SemiBold.woff);
+}
+
+@font-face {
+  font-family: ECircularBold;
+  src: url(./font/EuclidCircularA-Bold.woff);
+}
+
+@font-face {
+  font-family: ECircularMedium;
+  src: url(./font/EuclidCircularA-Medium.woff);
+}
+
+h1 {
+  font-family: 'ECircularBold', sans-serif;
+}
+
+h2 {
+  font-family: 'ECircularSemiBold', sans-serif;
+}
+
+h3 {
+  font-family: 'ECircularMedium', sans-serif;
+}
+
+p {
+  font-family: 'ECircularLight', sans-serif;
+}
+
+li {
+  font-family: 'ECircularLight', sans-serif;
+}
+
+img {
+  border-radius: 10px;
+}
+
+a {
+  color: #b42a77;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(240, 248, 255, 0.15),
+    rgba(240, 248, 255, 0.75),
+    rgba(240, 248, 255, 0.15)
+  );
+}
+
+/* INS TAGS */
+.sub-easy {
+  /* line-height: 2rem; */
+  font-size: 9px;
+  background: rgba(101, 204, 79, 0.58);
+  border: thin solid rgba(152, 255, 130, 0.4);
+  border-radius: 5px;
+  padding: 1.15px 6px;
+  text-decoration: none;
+}
+
+.sub-medium {
+  /* line-height: 2rem; */
+  background: rgba(255, 226, 146, 0.58);
+  border: thin solid rgba(230, 175, 95, 0.4);
+  border-radius: 5px;
+  padding: 1.15px 6px;
+  text-decoration: none;
+}
+
+.sub-hard {
+  /* line-height: 2rem; */
+  background: rgba(223, 73, 61, 0.58);
+  border: thin solid rgba(255, 124, 112, 0.4);
+  border-radius: 5px;
+  padding: 1.15px 6px;
+  text-decoration: none;
+}
+
+.sub-ins {
+  line-height: 10px;
+  background: rgba(244, 100, 147, 0.3);
+  border: thin solid rgba(244, 100, 147, 0.9);
+  border-radius: 5px;
+  padding: 3px 12px;
+  text-decoration: none;
+}
+
+.sub-ins-2 {
+  /* line-height: 2rem; */
+  background: rgba(244, 100, 147, 0.1);
+  border: thin solid rgba(244, 100, 147, 0.4);
+  border-radius: 5px;
+  padding: 1.15px 6px;
+  text-decoration: none;
+}
+
+ins {
+  background: rgba(244, 100, 147, 0.7);
+}
+/* INS TAGS ENDS HERE */
+
+/*TABLE STYLES*/
+
+table {
+  border-top: 1px;
+}
+
+td {
+  text-align: left;
+  border-bottom: 2px solidrgba(240, 248, 255, 0.1);
+}
+
+th,
+td {
+  font-family: 'ECircularLight';
+  font-size: 12px;
+  text-align: center;
+  border-bottom: 0.2px solid rgba(240, 248, 255, 0.8);
+  border-collapse: white;
+}
+/*TABLE STYLES ENDS HERE*/
+
+body {
+  font-family: 'ECircularMedium', sans-serif;
+  background-color: $light-background-color;
+  -webkit-text-size-adjust: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
+}
