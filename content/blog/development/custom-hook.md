@@ -8,11 +8,11 @@ draft: false
 
 ![](https://scotch-res.cloudinary.com/image/upload/w_auto,q_auto:good,f_auto/v1559752519/feljgaq20jwdi9auuwa9.png)
 
-Today we are going to write a reusable custom hook, and build a simple application that uses the custom hook that we will write. what we will have by the end are two components mainly a `User` component and `Post` component.
+We are going to write a reusable custom hook, and build a simple application that uses the custom hook. What we will have by the end of this tutorial are two components mainly a `User` component and a `Post` component.
 
-Each of these components passes an ID using fetch to make a request against the Jason Place holder API. If the user and the post with respective `ID's` exists, the data will be displayed. And, if they don't exist we'll just show the text user not found or post not found.
+Each of these components will pass an ID using fetch to make a request against the JSON Place holder API. If the user and the post with respective `ID's` exists, the data will be displayed. And, if they don't exist we'll just show the text, user not found or post not found.
 
-Now one of the hunches that we will encounter while write the component code is that we'll probably end up writing very similar code. So to avoid any repititive code we write a custom hook component that our user and post component levearages for requesting and retrieving data.
+Now one of the hunches that we will encounter while writing the component code is that we'll probably end up writing very similar code. So to avoid any repititive code we write a custom hook component that our user and post component levearages for requesting and retrieving data.
 
 ## Basic Setup
 
