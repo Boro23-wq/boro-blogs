@@ -1,7 +1,7 @@
 ---
-title: history.push not re-rendering component.
+title: history.push not re-rendering component
 description: How history.push haunted me for several days.
-date: 2020-09-07
+date: 2020-10-07
 category: 'development'
 draft: false
 ---
