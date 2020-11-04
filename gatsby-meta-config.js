@@ -1,5 +1,5 @@
 module.exports = {
-  title: `My🚀 Space`,
+  title: `👨‍💻 My Space `,
   description: `Blog posted about ...`,
   author: `Sintu Boro`,
   introduction: `
