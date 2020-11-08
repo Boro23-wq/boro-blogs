@@ -2,7 +2,7 @@
 title: Type checking with propTypes
 description: propTypes in React.
 date: 2020-10-11
-category: 'development'
+category: 'react'
 draft: false
 ---
 
