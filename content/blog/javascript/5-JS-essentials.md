@@ -6,7 +6,7 @@ category: 'javascript'
 draft: false
 ---
 
-We are looking at the five most essential Javascript fundamentals that one must understand in order to deal with the intricacies of Javascript. Knowing this five great topics will surely help you write clean and comprehendable Javascript code.
+We are looking at the five most essential Javascript fundamentals that one must understand in order to deal with the intricacies of Javascript. Knowing this five great topics will surely help you write clean and comprehendible Javascript code.
 
 ## 1. Closures
 
@@ -26,7 +26,7 @@ log_num()
 
 Notice the function `log_num` didn't receive any parameter when we call it. Although we don't pass any parameter we still get the output 10. That's essentially a closure. Due to lexical scoping used in Javascript, any function can reference variables within its scope and outside of it. And that is the main reason, `num` even though living outside of the function's scope, and due to how scope works in Javascript (top-down/lexical), the function `log_num` can reference the variable outside of its scope.
 
-> The point to note here is that a inner function can access variables of the outer function but the outer function cannot access the variables defined within the inner function.
+> The point to note here is that an inner function can access variables of its outer function but the outer function cannot access the variables defined within the inner function.
 
 Taking the concept above, let us try another example to concretely understand the idea behind closures.
 
@@ -44,7 +44,7 @@ function justAdd(x) {
 // Output: 20
 ```
 
-Notice the inner function doesn't get passed x, and still it can have reference to variable x due to lexical scoping. And that is essentially closures in simple terms.
+Notice the inner function doesn't get passed x, and still it can have reference to variable x due to lexical scoping. And that is essentially what closures are in simple terms.
 
 ## 2. Hoisting
 
@@ -78,7 +78,7 @@ var foo = function() {
 
 Notice, how we define the function here and assign it to a variable. The variable `foo` will inevitably get hoisted. Thats, true. But it is not going to give us the intended result, but would throw an error saying `foo is not a function`.
 
-Remember when I said only function declarations get hoisted and not the assignments. That is exactly what is happening here. Only the variable foo or the left part is getting hoisted and that essentially means if we call the variable foo as a function call, it will have no idea about the call since it is not hoisted.
+Remember when I said only function declarations get hoisted and not its assignment. That is exactly what is happening here. Only the variable `foo` or the left part of the equal sign is getting hoisted and that essentially means if we call the variable foo, it will have no idea about the call since it was not hoisted earlier.
 
 ## 3. Callback Vs Promise
 
@@ -101,7 +101,7 @@ getNumber(n => {
 // Output: 5
 ```
 
-Essentially what this function does is, it will give us the number 5 after 100 ms. And that is how callback works. It will log 5 in the output (or callback) after 100 ms is elapsed (or work is done).
+Essentially what this function does is, it will give us the number 5 after 100 ms. And that is how callback works. It will log 5 in the output (or call back) after 100 ms is elapsed (or work is done).
 
 ```javascript
 // Promise mechanism
@@ -118,7 +118,7 @@ promise.then(n => console.log(n))
 
 The difference between callback and a promise as we can see in the example above is that we didn't return anything in a callback. But with the promise mechanism we will immediately receive a promise object that we store in the `promise` variable that may well represent a future value.
 
-Furthermore when we say `promise.then` in the last line, we log the value (or perform an operation) only after the promise is resolved and available. The key thing here is that right away we have some sort of token object that represents a possible future value which is not received with callbacks.
+Furthermore when we say `promise.then` in the last line, we log the value (or perform an operation) only after the promise is resolved and available. The key thing here is that right away we have some sort of token object that represents a possible future value which is not available when we use callbacks.
 
 ## 4. 'this' keyword in Javascript
 
@@ -137,7 +137,7 @@ person.sayName()
 // Output: Boro
 ```
 
-When we call `person.sayName()` we get logged Boro since `this` references to the object `person`. But let us do a seemingly small change and see what happens to our code.
+When we call `person.sayName()` we get logged Boro since `this` references to the object `person`. But let us do a small change and see what happens to our code.
 
 ```javascript
 const person = {
@@ -153,15 +153,15 @@ logName()
 // Output: undefined
 ```
 
-Here the function declaration is all same as the earlier example. But the only change is that instead of calling `person.sayName` directly we set it to a local variable and invoke the variable instead. Notice we get undefined this time even though the declaration is just the same. And, that's the whole point how 'this' works. The 'this' keyword will take context of whoever is calling the function.
+Here the function declaration is all same as the earlier example. But the only change is that instead of calling `person.sayName` directly we set it to a local variable and invoke the variable instead. Notice we get undefined this time even though the declaration is just the same. And, that's the whole point on how 'this' works. The 'this' keyword will take context of whoever is calling the function.
 
-In the first example, while calling `person.sayname`, since person is actually the one calling the method sayName, 'this' in the sayName function becomes person itself. So this keyword will essentially look at the one calling the function.
+In the first example, while calling `person.sayName`, since person is actually the one calling the method sayName, 'this' in the sayName function becomes person itself. So this keyword will essentially look at the one calling the function.
 
 But in the second example, since the variable `logName` is stored in a global context and there is no value as `global.sayName` therefore it would return undefined.
 
 ### Work around using 'bind' method
 
-Here we explicitly told Javascript that we want to bind to the person object. Now when we actually go ahead and call the local variable sitting somewhere in the global context we still get the desired result since we technically said no matter who ever calls it always bind it to the person object.
+Here we explicitly told Javascript that we want to bind to the person object. Now when we go ahead and call the local variable sitting somewhere in the global context we still get the desired result since we technically said no matter who ever calls it always bind it to the person object.
 
 ```javascript
 const person = {
