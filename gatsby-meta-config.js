@@ -10,7 +10,7 @@ module.exports = {
     github: `Boro23-wq`, // Your GitHub account
     instagram: `middlechild.x`, // Your Instagram account
     facebook: `404slimboysavage`, // Your Facebook account
-    linkedin: `sintu-boro-5a5aa415b`, // Your LinkedIn account
+    linkedin: `sintu-boro`, // Your LinkedIn account
   },
   icon: `content/assets/favivon.png`, // Add your favicon
   keywords: [

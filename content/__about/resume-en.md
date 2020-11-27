@@ -43,7 +43,7 @@ lang: 'en'
 
 [instagram]: https://instagram.com/middlechild.x
 [facebook]: https://www.facebook.com/404slimboysavage/
-[linkedin]: https://linkedin.com/in/sintu-boro-5a5aa415b
+[linkedin]: https://linkedin.com/in/sintu-boro
 [tools]: #
 
 <!-- **Boro23-wq/Boro23-wq** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile. -->
