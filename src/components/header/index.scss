@@ -4,10 +4,14 @@
   font-weight: 900;
   font-size: 48px;
   letter-spacing: -2px;
+  background: -webkit-linear-gradient(180deg, #cc007a 60%, #291e95 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .link {
+  // background: webkit-linear-gradient(to left, #291e95 100%, #cc007a 100%);
+  // color: linear-gradient(180deg, #30cfd0 0%, #6911d4 100%);
   box-shadow: none;
   text-decoration: none;
-  color: inherit;
 }

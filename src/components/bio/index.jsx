@@ -14,14 +14,14 @@ export const Bio = () => (
         <div className="bio">
           <div className="author">
             <div className="author-description">
-              <Image
+              {/* <Image
                 className="author-image"
                 fixed={data.avatar.childImageSharp.fixed}
                 alt={author}
                 style={{
                   borderRadius: `100%`,
                 }}
-              />
+              /> */}
               <div className="author-name">
                 <span className="author-name-prefix">Blog by</span>
                 <Link to={'/about'} className="author-name-content">

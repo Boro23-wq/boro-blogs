@@ -1,9 +1,9 @@
 module.exports = {
-  title: `👨‍💻 My Space `,
+  title: `Blog Space `,
   description: `Blog posted about ...`,
   author: `Sintu Boro`,
   introduction: `
-  An ardent learner and a pragmatist. I write about exciting technologies and solve leetcode sometimes.`,
+  A dedicated learner and a pragmatist. I write about exciting technologies and solve leetcode sometimes.`,
   siteUrl: `https://boro-blogs.netlify.app/`, // Your blog site url
   social: {
     twitter: `SintuBoro7`, // Your Twitter account
