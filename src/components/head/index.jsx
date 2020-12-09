@@ -4,7 +4,8 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import ogImage from '../../images/og.png'
 
-export function Head({ description, lang, meta, keywords, title, siteImage }) {
+export function Head({ description, lang, meta, keywords, title, siteImage, siteUrl }) {
+  console.log (siteUrl)
   return (
     <StaticQuery
       query={detailsQuery}
@@ -29,7 +30,7 @@ export function Head({ description, lang, meta, keywords, title, siteImage }) {
               },
               {
                 property: `og:image`,
-                content: siteImage,
+                content: `https://raw.githubusercontent.com/Boro23-wq/Boro23-wq/master/Dev.png`,
               },
               {
                 property: `og:image:width`,

@@ -5,7 +5,6 @@ module.exports = {
   introduction: `
   A dedicated learner and a pragmatist. I write about exciting technologies and solve leetcode sometimes.`,
   siteUrl: `https://boro-blogs.netlify.app/`, // Your blog site url
-  siteImage: `https://raw.githubusercontent.com/Boro23-wq/Boro23-wq/master/Dev.png`,
   social: {
     twitter: `SintuBoro7`, // Your Twitter account
     github: `Boro23-wq`, // Your GitHub account
