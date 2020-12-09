@@ -7,12 +7,12 @@ import { Head } from '../components/head'
 import { PostTitle } from '../components/post-title'
 import { PostDate } from '../components/post-date'
 import { PostContainer } from '../components/post-container'
-import { SocialShare } from '../components/social-share'
-import { SponsorButton } from '../components/sponsor-button'
+// import { SocialShare } from '../components/social-share'
+// import { SponsorButton } from '../components/sponsor-button'
 import { Bio } from '../components/bio'
 import { PostNavigator } from '../components/post-navigator'
 import { Disqus } from '../components/disqus'
-import { Utterances } from '../components/utterances'
+// import { Utterances } from '../components/utterances'
 import * as ScrollManager from '../utils/scroll'
 
 import '../styles/code.scss'
@@ -51,7 +51,7 @@ export default ({ data, pageContext, location }) => {
           slug={pageContext.slug}
         />
       )}
-      {!!utterances && <Utterances repo={utterances} />}
+      {/* {!!utterances && <Utterances repo={utterances} />} */}
     </Layout>
   )
 }

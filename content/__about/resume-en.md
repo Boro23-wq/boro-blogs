@@ -8,6 +8,8 @@ lang: 'en'
 
 ## Hey there 👋, I'm Boro
 
+![cover](/og.png)
+
 I’m currently a senior year undergraduate studying Computer Science. I blog during my free time. I usually write about exciting technologies related to React, Javascript and Development as a whole. I’m currently working on a Full Stack application using Next.js and hoping to write about my further experiences.
 
 </div>
