@@ -1,6 +1,6 @@
 module.exports = {
   title: `Blog Space `,
-  description: `Blog posted about ...`,
+  description: `Technical Blog on ReactJS, Javascript, API's and development as a whole.`,
   author: `Sintu Boro`,
   introduction: `
   A dedicated learner and a pragmatist. I write about exciting technologies and solve leetcode sometimes.`,
