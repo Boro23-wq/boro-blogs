@@ -10,7 +10,7 @@ Today, we have a fairly simple task of optimizing the SEO of an even fairly simp
 
 ![liverpool](./assets/app.png)
 
-The application is only a couple lines of code with an h2 and an image tag. The crux of this tutorial is not to try anything complex but to optimize the SEO of a simple yet purposeful application. By the end of this tutorial, we will clearly understand the neccessary steps that we need to take along the way to improve SEO and accessibility.
+The application is only a couple lines of code with an h2 and an image tag. The crux of this tutorial is not to try anything complex but to optimize the SEO of a simple yet purposeful application. By the end of this tutorial, we will clearly understand the necessary steps that we need to take along the way to improve SEO and accessibility.
 
 ## Reports from Lighthouse (Before optimization)
 
@@ -31,7 +31,7 @@ Also when lighthouse generates a report, it also provides you with additional in
 ### Accessibility Scores
 
 - Missing `title` tags
-- Image element don't have an `alt` tag
+- Image element doesn't have an `alt` tag
 - html element doesn't have a `lang` attribute
 
 ![acc-report](./assets/acc-report.png)
@@ -40,7 +40,7 @@ Also when lighthouse generates a report, it also provides you with additional in
 
 - Missing `title` tags
 - Document doesn't have a meta description
-- Image element don't have an `alt` tag
+- Image element doesn't have an `alt` tag
 
 ![seo-report](./assets/seo-report.png)
 
