@@ -30,17 +30,17 @@ Also when lighthouse generates a report, it also provides you with additional in
 
 ### Accessibility Scores
 
-- Missing `title` tags
-- Image element doesn't have an `alt` tag
-- html element doesn't have a `lang` attribute
+- Missing `title` tags.
+- Image element doesn't have an `alt` tag.
+- html element doesn't have a `lang` attribute.
 
 ![acc-report](./assets/acc-report.png)
 
 ### SEO Scores
 
-- Missing `title` tags
-- Document doesn't have a meta description
-- Image element doesn't have an `alt` tag
+- Missing `title` tags.
+- Document doesn't have a meta description.
+- Image element doesn't have an `alt` tag.
 
 ![seo-report](./assets/seo-report.png)
 
@@ -59,7 +59,7 @@ export default function Home() {
 }
 ```
 
-The very first optimization that I can see right off the bat is to use semantic markup to reinforce structural meaning of the content of a webpage. Semantatically correct HTML helps search engines serve your page better. And also let us add an alt in our Image tag (this is mainly helpful for screen readers).
+The very first optimization that I can see right off the bat is to use semantic markup to reinforce structural meaning of the content of a webpage. Semantically correct HTML helps search engines serve your page better. And also let us add an alt in our Image tag (this is mainly helpful for screen readers).
 
 ```javascript {3,4}
 export default function Home() {
@@ -99,7 +99,7 @@ export default function Home() {
 }
 ```
 
-But to overwrite those tags there's certainly a work around. The way we can achieve this in Next is to import a package like so.
+But to overwrite those tags there's certainly a work-around. The way we can achieve this in Next is to import a package like so.
 
 ```javascript {1,6-8}
 import Head from 'next/head'
@@ -127,9 +127,9 @@ Now anything that we want to put inside the head tag will go here. I have put on
 
 ## SEO specific tags
 
-To understandly deeply about SEO meta tags I would highly recommend you to take a look at an article from [Moz-The ultimate guide to SEO meta tags.](https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags)
+To cogently understand SEO meta tags I would highly recommend you to take a look at an article from [Moz-The ultimate guide to SEO meta tags.](https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags)
 
-Meta tags are essentially tags that provide data about your page to search engines and website visitors. In short, they make it easier for search engines to determine what your content is about, and thus is a vital component for SEO.
+Meta tags are essentially tags that provide data about your page to search engines and website visitors. In short, they make it easier for search engines to determine what your content is about and thus is a vital component for SEO.
 
 ```javascript {5-6}
 export default function Home() {
@@ -147,9 +147,9 @@ export default function Home() {
 }
 ```
 
-We have bumped up couple of meta tags (highlighted lines) that will help us with the SEO further.
+We have bumped up a couple of meta tags (highlighted lines) that will help us with the SEO further.
 
-- The description meta tag essentially tells search engines, what is the page all about. And by doing this we already have a good looking SEO optimization underway.
+- The description meta-tag essentially tells search engines, what is the page all about. And by doing this we already have a good looking SEO optimization underway.
 
 - The viewport meta tag will help with mobile screen size optimizations and you may run the risk of poor mobile experience if you don't wish to include them.
 
@@ -182,7 +182,7 @@ class MyDocument extends Document {
 }
 ```
 
-What we have here is an HTML document with a few tags. We can move away any sort of meta tags that needs to be used globally. As we do it here, we move the viewport and charset meta tags from the index file and move it here so every page in the application can have these attribute tags internally.
+What we have here is an HTML document with a few tags. We can move away from any sort of meta tags that needs to be used globally. As we do it here, we move the viewport and charset meta tags from the index file and move it here so every page in the application can have these attribute tags internally.
 
 And the final thing is to add the lang attribute to the HTML tag that perdurably sits globally.
 
@@ -202,17 +202,17 @@ And the final thing is to add the lang attribute to the HTML tag that perdurably
 
 ## Final Reports from Lighthouse
 
-Voila! There we have our final report from Lighthouse. The nity-gritty optimizations were certainly handy and the SEO and Accessibility ranks were bumped up to maximum of 100.
+Voila! There we have our final report from Lighthouse. The nitty-gritty optimizations were certainly handy and the SEO and Accessibility ranks were bumped up to a maximum of 100.
 
 ![final-report](./assets/final-report.png)
 
-By utilizing this simple SEO practices, we can immensely improve the visibility of our website to help the site gain better ranks and position on the search engine results page(SERP).
+By utilizing these simple SEO practices, we can immensely improve the visibility of our website to help the site gain better ranks and position on the search engine results page(SERP).
 
 ## Tutorial Assets
 
-The github link to the project repository can be found [here.](https://github.com/Boro23-wq/SEO-optimization-in-Next.js)
+The Github link to the project repository can be found [here.](https://github.com/Boro23-wq/SEO-optimization-in-Next.js)
 
-### To get started:
+### Or to get started:
 
 - git clone https://github.com/Boro23-wq/SEO-optimization-in-Next.js.git
 - cd SEO-optimization-in-Next.js
