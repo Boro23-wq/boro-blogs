@@ -163,7 +163,7 @@ To be able to add things globally we have something called `_document.jsx` file 
 
 To override the default Document, create the file ./pages/\_document.js and extend the Document class as shown below:
 
-```javascript
+```javascript {4}
 class MyDocument extends Document {
   render() {
     return (
