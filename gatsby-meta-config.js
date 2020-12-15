@@ -1,5 +1,5 @@
 module.exports = {
-  title: `Technical Blog by Boro`,
+  title: `Blog Space`,
   description: `Hi! I am Sintu Boro. I write technical blogs on ReactJS, Javascript, Frameworks, API's and development as a whole. I also write about solving algorithm problems.`,
   author: `Sintu Boro`,
   introduction: `
@@ -14,6 +14,7 @@ module.exports = {
   },
   icon: `content/assets/favivon.png`, // Add your favicon
   keywords: [
+    `technical blog`,
     `blog`,
     `boro-blogs`,
     `sintu-boro-blog`,
