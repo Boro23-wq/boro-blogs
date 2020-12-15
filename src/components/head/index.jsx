@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import ogImage from '../../images/og.png'
 
 export function Head({ description, lang, meta, keywords, title }) {
-  console.log(title)
   return (
     <StaticQuery
       query={detailsQuery}
