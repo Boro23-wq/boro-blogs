@@ -37,11 +37,11 @@ export const Bio = () => (
                       Instagram
                     </a>
                   )}
-                  {social.twitter && (
+                  {/* {social.twitter && (
                     <a href={`https://twitter.com/${social.twitter}`}>
                       Twitter
                     </a>
-                  )}
+                  )} */}
                   {social.facebook && (
                     <a href={`https://www.facebook.com/${social.facebook}`}>
                       Facebook
