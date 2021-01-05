@@ -58,7 +58,28 @@ pre[class*='language-'] {
   padding: 1.2em;
   margin: 1.5em 0;
   overflow: auto;
-  border-radius: 0.6em;
+  border: 1px solid rgba(245, 245, 245, 0.1);
+}
+
+.gatsby-remark-code-title {
+  margin-bottom: -1.2rem;
+  padding: 0.5em 1em;
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+
+  background-color: rgb(5, 37, 63);
+  color: whitesmoke;
+  z-index: 0;
+  font-weight: 800;
+
+  border-top: 1px solid rgba(245, 245, 245, 0.1);
+  border-right: 1px solid rgba(245, 245, 245, 0.1);
+  border-left: 1px solid rgba(245, 245, 245, 0.1);
+
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
 }
 
 :not(pre) > code[class*='language-'],
@@ -68,13 +89,15 @@ pre[class*='language-'] {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  padding: 0.1em 0.6em;
-  border-radius: 0.2em;
+  padding: 0.2em 0.6em;
+  border: 0.1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.4em;
   white-space: normal;
   background: $inline-dimmed-color;
+  // background: rgba(0, 0, 0, 0.4);
   color: $inline-text-color;
+  // color: rgb(214, 188, 250);
 }
-
 .token.comment,
 .token.block-comment,
 .token.prolog,
