@@ -12,13 +12,13 @@ Next.js has introduced Automatic Image Optimization in versions 10.0.0 and above
 
 ## The Major Concern
 
-Images make up one of the largest elements to be loaded on a page. Thus, we need to have a way to optimize image for better Web Vital scores.
+Images make up one of the largest elements to be loaded on a page. Thus, we need to have a way to optimize images for better Web Vital scores.
 
 Unoptimized images can take a toll on significant Web Vitals such as Largest Contentful Paint or LCP.
 
 > Largest Contentful Paint (LCP) is a Core Web Vitals metric and measures when the largest content element in the viewport becomes visible. It can be used to determine when the main content of the page has finished rendering on the screen.
 
-There can be significant negative impact on a webpage if images are not optimized. Therefore, ensuring images are compressed to it's adequate size and in formats such as WebP, JPEG, and PNG is a big deal.
+There can be a significant negative impact on a webpage if images are not optimized. Therefore, ensuring images are compressed to their adequate size and in formats such as WebP, JPEG, and PNG is a big deal.
 
 ## Some Features of Image Component
 
@@ -30,11 +30,11 @@ There can be significant negative impact on a webpage if images are not optimize
 
 <br>
 
-- The Image Component doesn't optimize image during build time. Instead, it optimizes images real time or when in demand. Optimizing images during build time can increase the build time drastically and hence Next.js avoids that.
+- The Image Component doesn't optimize images during build time. Instead, it optimizes images in real-time or when in demand. Optimizing images during build time can increase the build time drastically and hence Next.js avoids that.
 
 <br>
 
-- Lazy loading is achieved. Lazy Loading simply means that only the images that are in the viewport will be loaded. Subsequent images load as they are scrolled into viewport.
+- Lazy loading is achieved. Lazy Loading simply means that only the images that are in the viewport will be loaded. Subsequent images load as they are scrolled into the viewport.
 
 <br>
 
@@ -42,13 +42,13 @@ There can be significant negative impact on a webpage if images are not optimize
 
 <br>
 
-- Cumulative Layout Shift are often caused when visible elements are forced to move because another element was suddenly added to the page or resized.
+- Cumulative Layout Shift is often caused when visible elements are forced to move because another element was suddenly added to the page or resized.
 
 ## The Image Component improves application performance
 
 The Image Component in Next.js helps us to follow best practices to optimize images. It also uses srcsets, preloads and custom sized image assets. Following the best practices enables an application to improve metrics such as LCP and CLS.
 
-The Image Component with it's simple and intuitive API will bring out great developer experience in implementing them into new applications, or even into existing applications.
+The Image Component with its simple and intuitive API will bring out great developer experience in implementing them into new applications, or even into existing applications.
 
 ## The Image Component
 
@@ -72,9 +72,9 @@ export default Cats
 
 ### Some Required Props
 
-`1. src`
+<u>1. src</u>
 
-Src is the path or URL to the source image. When using an external URL or when pulling out image from external source, you must add it to domains in next.config.js like so:
+Src is the path or URL to the source image. When using an external URL or when pulling out the image from an external source, you must add it to domains in next.config.js like so:
 
 ```javascript
 module.exports = {
@@ -84,15 +84,15 @@ module.exports = {
 }
 ```
 
-This enables us to optimize images hosted on an external website, using an absolute url for the Image src.
+This enables us to optimize images hosted on an external website, using an absolute URL for the image src.
 
-`2. width`
+<u>2. width</u>
 
 The width of the image, in pixels.
 
 > Required unless layout="fill".
 
-`3. height`
+<u>3. height</u>
 
 The height of the image, in pixels.
 
@@ -106,15 +106,15 @@ The following Image Component props are optional:
 
 The layout property of an image is used to react to changes in the viewport size. Listed below are the layout properties we have in Next.js Image Component.
 
-- **_Fixed_** : with fixed layout, the image dimensions are constant as the viewport changes (no responsivenes).
+- **_Fixed_** : With a fixed layout, the image dimensions are constant as the viewport changes (no responsivenes).
 
 <br>
 
-- **_Intrinsic_** : The intrinsic layout is quite different. The image will only scale it's dimensions down for smaller viewports but the same image will maintain it's original dimensions for larger viewports.
+- **_Intrinsic_** : The intrinsic layout is quite different. The image will only scale its dimensions down for smaller viewports but the same image will maintain its original dimensions for larger viewports.
 
 <br>
 
-- **_Responsive_** : With the responsive property, the image will scale it's dimensions to fit the viewport. The images will be scaled down for smaller viewports (such as mobile, phablets) and scaled up for larger viewports (such as desktop, laptops).
+- **_Responsive_** : With the responsive property, the image will scale its dimensions to fit the viewport. The images will be scaled down for smaller viewports (such as mobile, phablets) and scaled up for larger viewports (such as desktops, laptops).
 
 <br>
 
@@ -126,7 +126,7 @@ Quality prop refers to the quality of the optimized image to be displayed. It is
 
 #### 3. Priority
 
-Priority is a boolean value. If true, the image will be considered as high priority and will be preloaded. If false, the image will have a default priority.
+Priority is a boolean value. If true, the image will be considered as a high priority and will be preloaded. If false, the image will have a default priority.
 
 ## Caching in Image Component
 
@@ -136,7 +136,7 @@ When a request is made that matches a cached but expired file, the cached file i
 
 The expiration is defined by the upstream server's Cache-Control header.
 
-You can configure deviceSizes and imageSizes to reduce the total number of possible generated images.
+You can configure 'deviceSizes' and 'imageSizes' to reduce the total number of possible generated images.
 
 ## Device Variants
 
