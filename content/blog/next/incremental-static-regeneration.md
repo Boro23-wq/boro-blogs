@@ -18,13 +18,13 @@ Next.js has introduced a very handy feature called Incremental Static Re-generat
 
 Rebuilding a website for every update could be a tedious task. The Incremental Static Re-generation feature deals with all the updates gracefully. Existing pages are updated by re-rendering them in the background as traffic comes in.
 
-For every incoming traffic, background regeneration pushes the newly-generated page after it's done generating, without any uninterruption.
+For every incoming traffic, background regeneration pushes the newly-generated page after it's done generating, without any interruption.
 
 > We can use `fallback: true` option to fallback on stale version of the website when a newer version is being generated. Also, fallback is useful when someone requests a page that’s not generated yet.
 
 ## High-level Architecture
 
-Here in the diagram we can see User-1 requesting data from an endpoint (/post/1). While the request is made, User-1 immediately receives a stale response of the request (already generated data). At the same time, another request is triggered to update any data which subsequently re-generates the page with the the updated data.
+Here in the diagram, we can see User-1 requesting data from an endpoint (/post/1). While the request is made, User-1 immediately receives a stale response of the request (already generated data). At the same time, another request is triggered to update any data which subsequently re-generates the page with the updated data.
 
 ![static-regeneration-image](./assets/static-regeneration-image-1.png)
 
@@ -40,11 +40,11 @@ The following application demonstrates the feature of Incremental Static Re-gene
 
 ![incremental-static-regeneration](./assets/incremental-static-regeneration.gif)
 
-The application above is demonstrated in Next.js blog available [here](https://nextjs.org/blog/next-9-5#stable-incremental-static-regeneration). Please try it out on your own.
+The application above is demonstrated in the Next.js blog available [here](https://nextjs.org/blog/next-9-5#stable-incremental-static-regeneration). Please try it out on your own.
 
 ## Code in-depth
 
-Let us have a quick review of the code and understand how that works. The asynchronous `getStaticProps` method statically generates and fetches data at build time. We make a query that makes a request to an the GitHub endpoint. The query resolves to the content (emoji reactions) of the issue we want to grab from a particular repository.
+Let us have a quick review of the code and understand how that works. The asynchronous `getStaticProps` method statically generates and fetches data at build time. We make a query that makes a request to a GitHub endpoint. The query resolves to the content (emoji reactions) of the issue we want to grab from a particular repository.
 
 ### Querying an endpoint:
 
@@ -90,7 +90,7 @@ const reactions = json.data.repository.issue.reactionGroups.map(
 )
 ```
 
-The data received is an array of objects like so. Each of these items are mapped through and the object property called 'totalCount' has the figure stored that indicates the total number of reactions for each emoji.
+The data received is an array of objects like so. Each of these items is mapped through and the object property called 'totalCount' has the figure stored that indicates the total number of reactions for each emoji.
 
 ```js:title=console.log(json.data.repository.issue.reactionGroups)
 reactions = [
@@ -105,7 +105,7 @@ reactions = [
 ]
 ```
 
-Right after, we then expose the reactions as props to be consumed by a component. We also have a revalidate count (here as 1) that indicates the number of seconds to wait from the moment a request comes in for the re-generation.
+Right after, we then expose the reactions as props to be consumed by a component. We also have a revalidate count (here as 1) that indicates the number of seconds to wait from the moment a request comes in for the regeneration.
 
 ```js
 return {
@@ -121,6 +121,6 @@ We can only imagine Next.js to skyrocket with this great feature available out-o
 
 ## References
 
-- The github repo for this application can be found [here.](https://github.com/Boro23-wq/reactions)
+- The GitHub repo for the demo application can be found [here.](https://github.com/Boro23-wq/reactions)
 - [Incremental Static Re-generation - Next.js.](https://nextjs.org/blog/next-9-5#stable-incremental-static-regeneration)
 - [Github issue whose reactions were recorded.](https://github.com/chibicode/reactions/issues/1)
