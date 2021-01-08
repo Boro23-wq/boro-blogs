@@ -24,7 +24,7 @@ For every incoming traffic, background regeneration pushes the newly-generated p
 
 ## High-level Architecture
 
-Here in the diagram, we can see User-1 requesting data from an endpoint (/post/1). While the request is made, User-1 immediately receives a stale response of the request (already generated data). At the same time, another request is triggered to update any data which subsequently re-generates the page with the updated data.
+Here in the diagram, we can see User-1 requesting data from an endpoint (/post/1). While the request is made, User-1 immediately receives a stale response of the request (already generated data). At the same time, another request is triggered to update the data which subsequently re-generates the page with the updated data.
 
 ![static-regeneration-image](./assets/static-regeneration-image-1.png)
 
