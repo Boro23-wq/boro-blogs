@@ -18,7 +18,7 @@ We will succintly look through what these technologies do and how they do, which
 - [Context API - What is Context API?](#context)
 - [Which is better? Redux or Context?](#better)
 
-## <a style="color:white" name="redux">Redux - Library for State Management</a>
+## <a name="redux">Redux - Library for State Management</a>
 
 Redux is a JavaScript library used to manage the state of applications (mainly popular with React). By "state" I mean everything that is rendered on the view. From adding an element to the DOM or removing an element from the DOM, everything is taken care by Redux.
 
@@ -133,7 +133,7 @@ const mapDispatchToProps = dispatch => {}
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage)
 ```
 
-## <a style="color:white" name="context">Context API - Global state management for React applications</a>
+## <a name="context">Context API - Global state management for React applications</a>
 
 Before the advent of Context API, the data was passed through each component as a prop. So in order to pass down a prop to a child component it had to travel all the way down from the parent component to the child component (Top-down approach) in the state tree. This scenario is not preferrable since props are passed down to components that don't need them. Hence Context API now provides a way to expose a shared entity called "state" that can be used by the components without having to explicitly pass a prop through every level of the tree.
 
@@ -211,7 +211,7 @@ export default ProductsPage
 
 The Context.Consumer actually requires a function as a child. The function receives the current context value and returns a React node. The context is the exact same object passed to value in our ShopContext.Provider.
 
-## <a style="color:white" name="better">Which is better? Redux or Context?</a>
+## <a name="better">Which is better? Redux or Context?</a>
 
 Let's be honest there's no definitive answer to this question yet. As we have clearly seen that Redux, in order to work coherently within the React ecosystem requires a few extra libraries to set up. This takes a toll on any application as it increases the bundle size of the application to be shipped. While Context being just another React hook requires very less configuration to beat the similar purpose of prop drilling.
 
