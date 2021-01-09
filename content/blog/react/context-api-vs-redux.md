@@ -26,9 +26,9 @@ Redux is a JavaScript library used to manage the state of applications (mainly p
 
 Listed below are the components that make up Redux:
 
-- <u><i>State:</i></u> A state is where all the logic of your application lies. Basically, the state describes how your application works and the UI is rendered based on your state.
+- <u><i>State:</i></u> A state is where all the logic of your application lies. Basically, the state describes how your application works and the UI is rendered based on the state.
 
-- <u><i>Actions:</i></u> Actions are methods that are dispatched to trigger an event. Simply, an action is a way to notify that something has happened in the application.
+- <u><i>Actions:</i></u> Actions are methods that are dispatched to trigger an event. Simply, an action is a way to notify that an event has occured within the application.
 
 - <u><i>Reducers:</i></u> Reducers are methods that catches different actions triggered and modifies the logic to change and update the state of the application.
 
@@ -45,7 +45,7 @@ export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART'
 export const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODCUT_FROM_CART'
 
 export const addProductToCart = product => {
-  ...
+      ...
       dispatch({
         type: ADD_PRODUCT_TO_CART,
         payload: product,
@@ -55,7 +55,7 @@ export const addProductToCart = product => {
 }
 
 export const removeProductFromCart = productId => {
-  ...
+      ...
       dispatch({
         type: REMOVE_PRODUCT_FROM_CART,
         payload: productId,
@@ -65,11 +65,11 @@ export const removeProductFromCart = productId => {
 }
 ```
 
-The actions pretty much notifies the event that has occured within the application. The actions sends in the type of action triggered within its type field. All the additional information on what has changed is put into the payload field for reducer to decide any state change.
+The actions pretty much notifies about the event that has occured within the application. The actions method sends in the type of action triggered within its "type" field. All the additional information on what has changed is put into the "payload" field for reducer to decide any state change.
 
 ### <u>Reducer Functions</u>
 
-Here we have imported the actions to let the Reducer know about the actions that are valid and available.
+Here we have imported the actions to essentially let the Reducer function know about the actions that are valid and available.
 
 ```js {12-20}
 import { ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART } from './actions'
@@ -95,11 +95,11 @@ const Reducer = (state = initialState, action) => {
 }
 ```
 
-The Reducer function receives 'initialState' and 'actions' as arguments. Based on the type of action handled in the switch statement, the corresponding state change takes place. This is the function that takes care of mutating the state according to the type of event that has occured.
+The Reducer function receives "initialState" and "actions" as arguments. Based on the type of action handled in the switch statement, the corresponding state change takes place. This is the function that takes care of mutating the state according to the type of event that has occured.
 
 ### <u>Passing in store as a prop</u>
 
-We then pass in the store as a prop like so to make the state accessible by the React components. A store is passed in as a wrapper around the root application component.
+We then pass in the store as a prop demonstrated in the code section below to make the state accessible to the React components. A store is passed in as a wrapper around the root application component.
 
 ```js {6}
 import Reducer from './store/reducers'
@@ -114,10 +114,10 @@ ReactDOM.render(
 )
 ```
 
-We then use the connect method to connect the 'mapStateToProps' and 'mapDispatchToProps' function to the 'ProductsPage' component.
+We then use the connect method to connect the "mapStateToProps" and "mapDispatchToProps" function to the "ProductsPage" component.
 
-- <u><i>mapStateToProps:</i></u> mapStateToProps is used to provide the store data to the components.
-- <u><i>mapDispatchToProps:</i></u> mapDispatchToProps is used to provide the actions as props to your component.
+- <u><i>mapStateToProps:</i></u> It is used to provide the store data to the components.
+- <u><i>mapDispatchToProps:</i></u> It is used to provide the actions as props to your component.
 
 ```js {11}
 class ProductsPage extends Component {
@@ -156,17 +156,17 @@ We have created a context object as demonstrated below.
 const ShopContext = React.createContext(defaultValue)
 ```
 
-The context object allows the React components to subscribe to this Context object allowing them to read the current context value.
+The context object allows the React components to subscribe to this context object allowing them to read the current context value.
 
 ### <u>Providing Context</u>
 
-Upon providing the context it is now available to all the components to interact with it. Context are usually provided in the root component that wraps all the child components. This allows all the child components to receive their piece of the context when required.
+Upon providing the context, it is now available to all the components to interact with it. Context are usually provided in the root component that wraps all the child components. This allows all the child components to receive their piece of the context when required.
 
 <u><i>Note:</i></u>
 
-- The context can be made available to all the components of the application or to only a few components down the tree. For the former case, we can pass the context provider in the root component such as (<App />). And for the later, we can provide it to any particular component down the tree.
+- The context can be made available to all the components of the application or to only a few components down the tree. For the former case, we can pass the context provider in the root component. And for the later, we can provide it to any particular component down the component tree.
 
-The context is implemented as below:
+The context provider is implemented as below:
 
 ```js:title=Context.Provider {4}
 class App extends Component {
@@ -188,7 +188,7 @@ The value prop on <ShopContext.Provider> is the entity forwarded to the child co
 
 ### <u>Consuming from Context</u>
 
-ShopContext.Consumer is a wrapper component that is used to inject the value of the Context. It is subscribed to any context changes.
+<ShopContext.Consumer> is a wrapper component that is used to inject the value of the Context. It is subscribed to any context changes.
 
 ```js:title=Context.Consumer {4}
 class ProductsPage extends Component {
@@ -209,11 +209,11 @@ class ProductsPage extends Component {
 export default ProductsPage
 ```
 
-The Context.Consumer actually requires a function as a child. The function receives the current context value and returns a React node. The context is the exact same object passed to value in our ShopContext.Provider.
+The <Context.Consumer> actually requires a function as a child. The function receives the current context value and returns a React node. The context is the exact same object passed to value in our <ShopContext.Provider>.
 
 ## <a name="better">Which is better? Redux or Context?</a>
 
-Let's be honest there's no definitive answer to this question yet. As we have clearly seen that Redux, in order to work coherently within the React ecosystem requires a few extra libraries to set up. This takes a toll on any application as it increases the bundle size of the application to be shipped. While Context being just another React hook requires very less configuration to beat the similar purpose of prop drilling.
+Being very honest, there's no definitive answer to this question yet. As we have clearly seen that Redux, in order to work coherently within the React ecosystem requires a few extra libraries to set up. This takes a toll on any application as it increases the bundle size of the application to be shipped. While Context being just another React hook requires very less configuration to beat the similar purpose of prop drilling.
 
 To be more decisive I would say I would choose Context for applications that require less frequent updates on the other hand with more complex state having immediate or frequent updates, I would choose Redux by a margin. This is just to avoid the unneccessary re-render on each update on Context. Since Context happens to re-render the components in every state update, it is only viable to make use of Redux that only re-renders the updated components.
 
