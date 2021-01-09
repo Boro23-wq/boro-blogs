@@ -8,9 +8,9 @@ draft: false
 
 ![redux-vs-context-cover](./assets/redux-vs-context-cover.png)
 
-During the process of developing React applications, I've had times when I had to decide if I should use Redux or the fairly new hook (available from React's version 16.3) called ContextAPI for managing state in my application. For the most part, I have used Redux, but I feel Context API is a little less daunting to me. Anyway let me explain you through to manifest if either one's actually better.
+During the process of developing React applications, I've had times when I had to decide if I should use Redux or the fairly new hook (available from React's version 16.3) called ContextAPI for managing state in my application. For the most part, I have used Redux, but I feel Context API is a little less daunting to me. Anyway, let me explain you through to manifest if either one's actually better.
 
-We will succintly look through what these technologies do and how they do, which will probably help you decide which one should you choose for your next project.
+We will succinctly look through what these technologies do and how they do, which will probably help you decide which one should you choose for your next project.
 
 ## Table of Content
 
@@ -20,25 +20,25 @@ We will succintly look through what these technologies do and how they do, which
 
 ## <a name="redux">Redux - Library for State Management</a>
 
-Redux is a JavaScript library used to manage the state of applications (mainly popular with React). By "state" I mean everything that is rendered on the view. From adding an element to the DOM or removing an element from the DOM, everything is taken care by Redux.
+Redux is a JavaScript library used to manage the state of applications (mainly popular with React). By "state" I mean everything that is rendered on the view. From adding an element to the DOM or removing an element from the DOM, everything is taken care of by Redux.
 
 ![redux-flow](./assets/redux-flow.png)
 
-Listed below are the components that make up Redux:
+Listed below are the components that makeup Redux:
 
-- <u><i>State:</i></u> A state is where all the logic of your application lies. Basically, the state describes how your application works and the UI is rendered based on the state.
+- <u><i>State:</i></u> A state is where all the logic of your application lies. Basically, the state describes how your application works, and the UI is rendered based on the state.
 
-- <u><i>Actions:</i></u> Actions are methods that are dispatched to trigger an event. Simply, an action is a way to notify that an event has occured within the application.
+- <u><i>Actions:</i></u> Actions are methods that are dispatched to trigger an event. Simply, an action is a way to notify that an event has occurred within the application.
 
-- <u><i>Reducers:</i></u> Reducers are methods that catches different actions triggered and modifies the logic to change and update the state of the application.
+- <u><i>Reducers:</i></u> Reducers are methods that catch different actions triggered and modifies the logic to change and update the state of the application.
 
 - <u><i>Subscriptions:</i></u> Subscriptions are methods to make use of the state in your React application (by the components).
 
-Now since we know a little bit about Redux let's see through how all of this components work together.
+Now since we know a little bit about Redux let's see-through how all of these components work together.
 
 ### <u>Action Creators a.k.a. Actions</u>
 
-In Redux, actions are methods that are triggered to indicate that an event has occured within the application. An application can have few different actions depending upon the type of event that occurs within an application.
+In Redux, actions are methods that are triggered to indicate that an event has occurred within the application. An application can have a few different actions depending upon the type of event that occurs within an application.
 
 ```js {1,2}
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART'
@@ -65,7 +65,7 @@ export const removeProductFromCart = productId => {
 }
 ```
 
-The actions pretty much notifies about the event that has occured within the application. The actions method sends in the type of action triggered within its "type" field. All the additional information on what has changed is put into the "payload" field for reducer to decide any state change.
+The actions pretty much notify about the event that has occurred within the application. The actions method sends in the type of action triggered within its "type" field. All the additional information on what has changed is put into the "payload" field for the reducer to decide any state change.
 
 ### <u>Reducer Functions</u>
 
@@ -95,7 +95,7 @@ const Reducer = (state = initialState, action) => {
 }
 ```
 
-The Reducer function receives "initialState" and "actions" as arguments. Based on the type of action handled in the switch statement, the corresponding state change takes place. This is the function that takes care of mutating the state according to the type of event that has occured.
+The Reducer function receives "initialState" and "actions" as arguments. Based on the type of action handled in the switch statement, the corresponding state change takes place. This is the function that takes care of mutating the state according to the type of event that has occurred.
 
 ### <u>Passing in store as a prop</u>
 
@@ -135,14 +135,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(ProductsPage)
 
 ## <a name="context">Context API - Global state management for React applications</a>
 
-Before the advent of Context API, the data was passed through each component as a prop. So in order to pass down a prop to a child component it had to travel all the way down from the parent component to the child component (Top-down approach) in the state tree. This scenario is not preferrable since props are passed down to components that don't need them. Hence Context API now provides a way to expose a shared entity called "state" that can be used by the components without having to explicitly pass a prop through every level of the tree.
+Before the advent of Context API, the data was passed through each component as a prop. So in order to pass down a prop to a child component it had to travel all the way down from the parent component to the child component (Top-down approach) in the state tree. This scenario is not preferable since props are passed down to components that don't need them. Hence Context API now provides a way to expose a shared entity called "state" that can be used by the components without having to explicitly pass a prop through every level of the tree.
 
 > Prop Drilling is the process by which you pass data from one part of the React Component tree to another by going through other parts that do not need the data but only help in passing it around.
 
 ![context-api](./assets/context-api.jpg)
 _[Image Source](https://medium.com/@ipraveen/react-basic-how-react-16-context-api-work-7257591589fc)_
 
-Listed below are the components that mainly make up Context:
+Listed below are the components that mainly makeup Context:
 
 - Context Object
 - Context Provider
@@ -160,11 +160,11 @@ The context object allows the React components to subscribe to this context obje
 
 ### <u>Providing Context</u>
 
-Upon providing the context, it is now available to all the components to interact with it. Context are usually provided in the root component that wraps all the child components. This allows all the child components to receive their piece of the context when required.
+Upon providing the context, it is now available to all the components to interact with it. Context is usually provided in the root component that wraps all the child components. This allows all the child components to receive their piece of the context when required.
 
 <u><i>Note:</i></u>
 
-- The context can be made available to all the components of the application or to only a few components down the tree. For the former case, we can pass the context provider in the root component. And for the later, we can provide it to any particular component down the component tree.
+- The context can be made available to all the components of the application or to only a few components down the tree. For the former case, we can pass the context provider in the root component. And for the latter, we can provide it to any particular component down the component tree.
 
 The context provider is implemented as below:
 
@@ -215,7 +215,7 @@ The <Context.Consumer> actually requires a function as a child. The function rec
 
 Being very honest, there's no definitive answer to this question yet. As we have clearly seen that Redux, in order to work coherently within the React ecosystem requires a few extra libraries to set up. This takes a toll on any application as it increases the bundle size of the application to be shipped. While Context being just another React hook requires very less configuration to beat the similar purpose of prop drilling.
 
-To be more decisive I would say I would choose Context for applications that require less frequent updates on the other hand with more complex state having immediate or frequent updates, I would choose Redux by a margin. This is just to avoid the unneccessary re-render on each update on Context. Since Context happens to re-render the components in every state update, it is only viable to make use of Redux that only re-renders the updated components.
+To be more decisive I would say I would choose Context for applications that require less frequent updates on the other hand with a more complex state having immediate or frequent updates, I would choose Redux by a margin. This is just to avoid the unnecessary re-render on each update on Context. Since Context happens to re-render the components in every state update, it is only viable to make use of Redux that only re-renders the updated components.
 
 There is no conclusive evidence on why one is better than the other and will forever be just a matter of opinion.
 
