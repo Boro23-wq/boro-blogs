@@ -59,6 +59,7 @@ export default ({ data, location }) => {
         count={count}
         category={category}
       />
+      
     </Layout>
   )
 }
