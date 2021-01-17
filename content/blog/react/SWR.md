@@ -12,17 +12,17 @@ draft: false
 
 <br/>
 
-SWR or stale-while-revalidate helps developers to immediately load cached data and ensure freshness of the data by updating the cached content later. Basically, SWR is a strategy to first load the data from cache (stale), send the fetch request (revalidate or update existing data), and finally update the stale data with the new data.
+SWR or stale-while-revalidate helps developers to immediately load cached data and ensure freshness of the data by updating the cached content later. Basically, SWR is a strategy to first load the data from cache (stale), send the fetch request (revalidate or update existing data), and finally, update the stale data with the new data.
 
-With SWR, React components will receive stream of data updates almost instantly improving UI experience drastically with fast and reactive updates.
+With SWR, React components will receive a stream of data updates almost instantly improving UI experience drastically with fast and reactive updates.
 
 ## Overview
 
 ```javascript
 // importing SWR module
 import useSWR from 'swr'
-// fetcher functionn
 
+// fetcher function
 const fetcher = async path => {
   const res = await fetch(path)
 
@@ -38,7 +38,7 @@ function Cats() {
 }
 ```
 
-In the above example, the useSWR hook accepts two parameters, a key string or a path and a fetcher function. Key is basically the path to where you fetch the data from which will be passed to fetcher as an argument. Eventually the fetcher function is involved in return the essential data.
+In the above example, the useSWR hook accepts two parameters, a key string or a path and a fetcher function. Key is basically the path to where you fetch the data from which will be passed to the fetcher as an argument. Eventually, the fetcher function is involved in return the essential data.
 
 The hook typically returns two different values: data and error, based on the status of the request.
 
@@ -48,13 +48,13 @@ The hook typically returns two different values: data and error, based on the st
 { data, error } = useSWR(key, fetcher)
 ```
 
-This is how we implement an SWR. useSWR hook accepts two parameters. Firstly it takes the key (or any other API) and secondly the fetcher function takes care of utilising the key provided and returning the data.
+This is how we implement an SWR. useSWR hook accepts two parameters. Firstly it takes the key (or any other API) and secondly, the fetcher function takes care of utilizing the key provided and returning the data.
 
 ### An Example
 
-`/fetchingdata/pages/index.js`
-
 ```javascript {22}
+// src: fetchingdata/pages/index.js
+
 // importing libraries
 import useSWR from 'swr'
 import fetch from 'unfetch'
@@ -82,31 +82,31 @@ const Profile = () => {
 export default Profile
 ```
 
-In the above file, useSWR hook accepts the key as the first argument and the fetcher function as the second argument. Essentially it is hitting the endpoint designated by the key (/api/users/1) for the data. The fetcher function than successfuly hits the endpoint and displays the data as a div element (highlighted line) on successful data retrieval.
-
-`/fetchingdata/pages/api/users/[id].js`
+In the above file, the useSWR hook accepts the key as the first argument and the fetcher function as the second argument. Essentially it is hitting the endpoint designated by the key (/api/users/1) for the data. The fetcher function then successfully hits the endpoint and displays the data as a div element (highlighted line) on successful data retrieval.
 
 ```javascript
+// src: fetchingdata/pages/api/users/[id].js
+
 export default (req, res) => {
   const {
     query: { id },
   } = req
 
   res.status(200).json({
-    email: 'me@leerob.io',
+    email: 'me@boro.io',
     id,
     name: 'Boro',
   })
 }
 ```
 
-The file above is the data endpoint that fetcher function hits to retrieve the desired data. The file sends a response as a json with status of 200 response indicating that the request was a success.
+The file above is the data endpoint that the fetcher function hits to retrieve the desired data. The file sends a response as a JSON with the status of 200 indicating that the request was a success.
 
 ## Some notable SWR Features
 
 With minimal code, developers can now take complete advantage of SWR with the amazing features out-of-the-box listed below:
 
-- Jamstack oriented - Take advantage of core principles including pre-rendering, and decoupling along with SWR's lightning speed data availability.
-- Fast, lightweight and reusable data fetching
+- Jamstack oriented - Take advantage of core principles including pre-rendering and decoupling along with SWR's lightning speed data availability.
+- Fast, lightweight, and reusable data fetching
 - Built-in cache and request deduplication
 - Transport and protocol agnostic
