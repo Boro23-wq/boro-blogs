@@ -18,6 +18,8 @@ With SWR, React components will receive a stream of data updates almost instantl
 
 ## Overview
 
+In the example below, the useSWR hook accepts two parameters, a key string or a path and a fetcher function. Key is basically the path to where you fetch the data from which will be passed to the fetcher as an argument. Eventually, the fetcher function is involved in return the essential data.
+
 ```javascript
 // importing SWR module
 import useSWR from 'swr'
@@ -37,8 +39,6 @@ function Cats() {
   return <div>Hi {data.name}!</div>
 }
 ```
-
-In the above example, the useSWR hook accepts two parameters, a key string or a path and a fetcher function. Key is basically the path to where you fetch the data from which will be passed to the fetcher as an argument. Eventually, the fetcher function is involved in return the essential data.
 
 The hook typically returns two different values: data and error, based on the status of the request.
 

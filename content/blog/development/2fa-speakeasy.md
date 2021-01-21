@@ -12,19 +12,15 @@ draft: false
 
 Multi-factor authentication is an authentication method in which a user is granted access to a website or application only after successfully presenting two or more pieces of evidence to an authentication mechanism: knowledge, possession, and inherence.
 
-In the same way the two-factor authentication method requires you to enter additional data as an evidence to access your account. The most common forms of two-factor authentication involves entering a code as used by Google and Facebook for additional security.
+In the same way, the two-factor authentication method requires you to enter additional data as evidence to access your account. The most common forms of two-factor authentication involve entering a code as used by Google and Facebook for additional security.
 
 ## Advantages of Two Factor Authentication
 
 - Added layer security and added protection against cyber attacks.
-- Does not incur any extra costs while setting up.
+- Do not incur any extra costs while setting up.
 - Easy and convenient setup. For most implementations, all a user has to do is enable two-factor authentication and scan a QR code or enter their cellphone number so they can view or receive authentication codes respectively
 
-<br/>
-
-**_NOTE:_**
-
-In this tutorial, we will deal with a backend that implements the time-based one-time password (OTP) made available to us by the Speakeasy lirary. This tutorial only covers the backend implementation of the two-factor authentication.
+**_NOTE:_** In this tutorial, we will deal with a backend that implements the time-based one-time password (OTP) made available to us by the Speakeasy library. This tutorial only covers the backend implementation of the two-factor authentication.
 
 ## Setup
 
@@ -40,26 +36,26 @@ $ mkdir 2-fa
 $ cd 2-fa
 ```
 
-Now that we have our project folder, we will spin up a `package.json` using npm init:
+Now that we have our project folder, we will quickly scaffold a `package.json` using npm init:
 
 ```bash
 $ npm init -y
 ```
 
-After you go through couple of 'yes' and customize the setup, you will have a package.json file that might look something like this (according to what you all have set up):
+After you go through a couple of 'yes' and customize the setup, you will have a package.json file that might look something like this:
 
-```bash
+```json
 {
-"name": "2-fa",
-"version": "1.0.0",
-"description": "Two factor Authentication using Speakeasy",
-"main": "app.js",
-"scripts": {
-"test": "echo \"Error: no test specified\" && exit 1"
-},
-"keywords": [],
-"author": "Sintu Boro",
-"license": "ISC"
+  "name": "2-fa",
+  "version": "1.0.0",
+  "description": "Two factor Authentication using Speakeasy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sintu Boro",
+  "license": "ISC"
 }
 ```
 
@@ -68,19 +64,18 @@ After you go through couple of 'yes' and customize the setup, you will have a pa
 Run the following command to install the necessary dependencies:
 
 ```bash
-$ yarn add express body-parser node-json-db uuid speakeasy
+$ yarn add express body-parser node-json-db uuid speakeasy ||
+$ npm install express body-parser node-json-db uuid speakeasy
 ```
 
-Here,
-
-- Express is a Node.js web application framework that we’ll use to create our server.
+- Express is a Node.js web application framework that we’ll use to spin our server.
 - The middleware body-parser package allows us to parse encoded data from incoming HTTP requests and expose them as req.body, so we can extract the essential data.
 - Node-json-db will be used as a database instance for storage.
-- Speakeasy is a one-time passcode generator, that we will use for the two-factor authentication demonstration.
+- Speakeasy is a one-time passcode generator, that we require for the two-factor authentication demonstration.
 
-We now have all the necessary dependecies and are ready to create our server. In the project folder, create an `index.js` file that will act as an entry point to our project and add the following code to it:
+We now have all the necessary dependencies and are ready to create our server. In the project folder, create an `index.js` file that will act as an entry point to our project and add the following code to it:
 
-```javascript
+```js
 const express = require('express')
 const bodyParser = require('body-parser')
 const JsonDB = require('node-json-db').JsonDB
@@ -125,7 +120,7 @@ $ node index.js
 
 ![](./assets/speakeasy-1.png)
 
-And now if we hit the route /api, we receive the following as a json response;
+If we hit the route `/api`, we receive the following as a JSON response;
 
 ![](./assets/speakeasy-2.png)
 
@@ -133,9 +128,9 @@ And now if we hit the route /api, we receive the following as a json response;
 
 We now need to generate a secret key that in turn generates us the two-factor authentication code through the Authenticator extension that we will be using. We will also have a route to register a user containing just the userID and the secret key generated by speakeasy.
 
-To do this we will use Speakeasy’s `generateSecret` function. The response returns an object that has the secret in ascii, hex,base32, and otpauth_url formats. We will only be using the base32 string to set up two-factor authentication. Paste the following code to create the register user route:
+To do this we will use Speakeasy’s `generateSecret` function. The response returns an object that has the secret in ASCII, hex, base32, and otpauth_url formats. We will only be using the "base32" string to set up two-factor authentication. Paste the following code to create the register user route:
 
-```javascript
+```js
 app.post('/api/register', (req, res) => {
   const id = uuid.v4()
   try {
@@ -195,7 +190,7 @@ app.post('/api/verify', (req, res) => {
 })
 ```
 
-Now hit back to the two-factor authentication extension and retrieve the code so we can verify the secret using a Postman request to the verify route.
+Now open up the two-factor authentication extension and retrieve the code so we can verify the secret using a Postman request to the verify route.
 
 ![](./assets/speakeasy-4.png)
 
@@ -203,11 +198,11 @@ After the validation, the secret key is now stored permanently and is used to ve
 
 ## Verify User Tokens
 
-The final step in the two-factor authentication is verifying the code that the user enters from their authenticator app. We need to add another route that will confirm that the tokens entered by the user are valid. The verification is handled by the Speakeasy totp(Time Based One Time Password) verify function.
+The final step in the two-factor authentication is verifying the code that the user enters from their authenticator app. We need to add another route that will confirm that the tokens entered by the user are valid. The verification is handled by the Speakeasy TOTP (Time Based One Time Password) verify function.
 
 This receives an object that contains the secret, the encoding to use to verify the token, the token, and a window option. A window refers to the period of time that a token is valid. This is usually 30 seconds but can vary depending on the time selected by the developer of the two-factor process.
 
-You want to be careful to now pass out a large window allowance as that would lead to verification process becomeing less secure. Copy the code below to add the endpoint to validate the tokens:
+You want to be careful to now pass out a large window allowance as that would lead to the verification process becoming less secure. Copy the code below to add the endpoint to validate the tokens:
 
 ```javascript
 app.post('/api/validate', (req, res) => {
@@ -237,7 +232,7 @@ app.post('/api/validate', (req, res) => {
 })
 ```
 
-Now hit the validate route and verify the code from authenticator using Postman.
+Now hit the validate route and verify the code from the authenticator using Postman.
 
 ![](./assets/speakeasy-5.png)
 
@@ -245,7 +240,9 @@ And there you go! We have successfully implemented a two-factor authentication u
 
 The entire `index.js` file would look something like this:
 
-```javascript
+```js
+// src: index.js
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const JsonDB = require('node-json-db').JsonDB
@@ -354,5 +351,5 @@ app.listen(port, () => {
 
 ## References
 
-- [Two-Factor Authentication using SpeakEasy](https://blog.logrocket.com/implementing-two-factor-authentication-using-speakeasy/)
-- [Traversy Media - Two Factor Authentication](https://www.youtube.com/watch?v=KQya9i6czhM&t=167s)
+- Two-Factor Authentication using SpeakEasy - [Logrocket.](https://blog.logrocket.com/implementing-two-factor-authentication-using-speakeasy/)
+- For video explanation of the same please visit [Traversy Media - Two Factor Authentication](https://www.youtube.com/watch?v=KQya9i6czhM&t=167s) on Youtube.
